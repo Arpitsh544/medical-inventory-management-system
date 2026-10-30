@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#102a38" />
+    <meta name="description" content="A medical inventory management prototype for tracking stock, expiry, suppliers, and procurement." />
+    <title>MedStock — Inventory workspace</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell" id="app">
+      <aside class="sidebar">
+        <a class="brand" href="#overview" aria-label="MedStock overview">
+          <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M13 4h6v9h9v6h-9v9h-6v-9H4v-6h9z" fill="currentColor"/></svg></span>
+          <span><strong>medstock</strong><small>INVENTORY WORKSPACE</small></span>
+        </a>
+        <div class="workspace-tag"><span class="status-dot"></span> Demo workspace <span class="chevron">⌄</span></div>
+        <div class="nav-label">WORKSPACE</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-page="overview"><span class="nav-icon">⌂</span>Overview</button>
+          <button class="nav-item" data-page="inventory"><span class="nav-icon">▤</span>Inventory <span class="nav-count" id="inventory-nav-count">0</span></button>
+          <button class="nav-item" data-page="alerts"><span class="nav-icon">◉</span>Alerts <span class="nav-count alert-count" id="alerts-nav-count">0</span></button>
+          <button class="nav-item" data-page="network"><span class="nav-icon">⌘</span>Supply network</button>
+          <button class="nav-item" data-page="planning"><span class="nav-icon">↗</span>Reorder planning</button>
+          <button class="nav-item" data-page="reports"><span class="nav-icon">▥</span>Reports</button>
+        </nav>
+        <div class="nav-label dsa-label">PROJECT MODULE</div>
+        <button class="nav-item" data-page="dsa"><span class="nav-icon">⌬</span>DSA lab</button>
+        <div class="sidebar-bottom">
+          <div class="sidebar-note"><span class="note-icon">✳</span><div><strong>Built for your PBL</strong><p>See the algorithms behind everyday inventory decisions.</p></div></div>
+          <button class="profile-row" type="button"><span class="avatar">AS</span><span class="profile-copy"><strong>Arpit Sharma</strong><small>Project workspace</small></span><span class="profile-menu">···</span></button>
+        </div>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>Workspace</span><span class="crumb-sep">/</span><strong id="breadcrumb-current">Overview</strong></div>
+          <div class="topbar-actions"><span class="today-chip"><span class="live-dot"></span> All systems ready</span><button class="icon-button" id="reset-data" title="Restore sample data" aria-label="Restore sample data">↺</button><span class="avatar top-avatar">AS</span></div>
+        </header>
+        <main id="main-content" tabindex="-1"></main>
+        <footer class="app-footer"><span>MedStock · DSA project prototype</span><span>Sample data is stored in this browser</span></footer>
+      </div>
+    </div>
+    <div id="modal-root"></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
+
